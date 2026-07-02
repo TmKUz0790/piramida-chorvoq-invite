@@ -265,6 +265,8 @@ h2::after {
 }
 .location { background: var(--akfa-light); color: var(--akfa-dark-red); }
 .responsible { background: #f0f0f0; color: var(--ink-soft); }
+.responsible a { color: var(--akfa-red); text-decoration: none; font-weight: 700; }
+.responsible a:hover { text-decoration: underline; }
 
 /* ─── Gallery ─── */
 .gallery-grid {
