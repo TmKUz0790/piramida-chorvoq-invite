@@ -1,65 +1,33 @@
-const targetDate = new Date('2026-07-15T08:00:00+05:00').getTime();
-let countdownEls = null;
+const targetDate = new Date('2026-07-15T10:00:00+05:00').getTime();
+let els;
 
-function updateCountdown() {
-  if (!countdownEls) return;
-  const diff = targetDate - Date.now();
-  const { days, hours, minutes, seconds } = countdownEls;
-
-  if (diff <= 0) {
-    days.textContent = hours.textContent = minutes.textContent = seconds.textContent = '0';
-    return;
-  }
-
-  days.textContent = Math.floor(diff / 86400000);
-  hours.textContent = Math.floor((diff % 86400000) / 3600000);
-  minutes.textContent = Math.floor((diff % 3600000) / 60000);
-  seconds.textContent = Math.floor((diff % 60000) / 1000);
+function tick() {
+  if (!els) return;
+  const d = targetDate - Date.now();
+  if (d <= 0) { els.days.textContent = els.hours.textContent = els.minutes.textContent = els.seconds.textContent = '0'; return; }
+  els.days.textContent = Math.floor(d / 864e5);
+  els.hours.textContent = Math.floor((d % 864e5) / 36e5);
+  els.minutes.textContent = Math.floor((d % 36e5) / 6e4);
+  els.seconds.textContent = Math.floor((d % 6e4) / 1e3);
 }
 
-function initCountdown() {
-  countdownEls = {
-    days: document.getElementById('days'),
-    hours: document.getElementById('hours'),
-    minutes: document.getElementById('minutes'),
-    seconds: document.getElementById('seconds'),
-  };
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-}
+els = { days: document.getElementById('days'), hours: document.getElementById('hours'), minutes: document.getElementById('minutes'), seconds: document.getElementById('seconds') };
+tick();
+setInterval(tick, 1000);
 
-function initDayTabs() {
-  const tabs = document.querySelectorAll('.day-tab');
-  const days = document.querySelectorAll('.day');
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.day;
-      tabs.forEach((t) => t.classList.toggle('active', t === tab));
-      days.forEach((d) => d.classList.toggle('active', d.dataset.day === target));
-    });
+document.querySelectorAll('.day-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const t = tab.dataset.day;
+    document.querySelectorAll('.day-tab').forEach(b => b.classList.toggle('active', b === tab));
+    document.querySelectorAll('.day').forEach(d => d.classList.toggle('active', d.dataset.day === t));
   });
-}
+});
 
-function initReveal() {
-  const targets = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) {
-    targets.forEach((el) => el.classList.add('in-view'));
-    return;
-  }
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-  targets.forEach((el) => observer.observe(el));
+if ('IntersectionObserver' in window) {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
 }
-
-initCountdown();
-initDayTabs();
-initReveal();
