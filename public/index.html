@@ -3,15 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AKFA Comfort — Piramida Chorvoq Korporativ Sayohat</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>AKFA Comfort — Piramida Chorvoq</title>
+<link rel="preconnect" href="https://lh3.googleusercontent.com">
+<link rel="preconnect" href="https://pr.uz">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--r:#E31E24;--rd:#B71518;--bk:#1A1A1A;--dk:#0D0D0D;--rl:#FDE8E8;--rs:#FFF0F0;--bg:#F5F5F5;--c:#fff;--t:#5A5A5A;--b:#E5E5E5;--rad:14px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--bk);line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-weight:800}
+.navbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.5rem;background:rgba(26,26,26,.97);backdrop-filter:blur(12px);border-bottom:2px solid var(--r)}
+.akfa-logo-nav{height:32px;width:auto}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;margin-left:1.4rem;font-size:.88rem;font-weight:700;transition:color .15s}
+.nav-links a:hover{color:#fff}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(170deg,rgba(13,13,13,.7),rgba(13,13,13,.92)),url('https://lh3.googleusercontent.com/gps-cs-s/APNQkAGZorlVvPR8sBVEQssS0H8iNwUeBZEll2nl7lTunsX_KNhDsnP3Vf6FCo3UWIZc4XbhmeCupw4Td9tF8otV9rTvg9wtx6NSoQBeDnXWG70jNDm9SXWvRTYqCksaKM_U8XflTyBG=s680-w680-h510-rw') center/cover no-repeat}
+.hero-content{color:#fff;padding:2rem 1.5rem;max-width:700px}
+.hero-logo{margin-bottom:1.8rem}
+.hero-logo img{height:60px;width:auto}
+.hero-eyebrow{letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;font-weight:700;color:var(--r);margin-bottom:.6rem}
+.hero h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:900;line-height:1.1;margin-bottom:.7rem}
+.hero-dates{font-size:1.15rem;color:var(--r);font-weight:700;margin-bottom:2rem}
+.btn{display:inline-block;padding:.85rem 2.4rem;background:var(--r);color:#fff;text-decoration:none;border-radius:30px;font-weight:800;font-size:.95rem;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 20px rgba(227,30,36,.35)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(227,30,36,.5);background:var(--rd)}
+.countdown{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-bottom:2rem}
+.count-box{background:rgba(227,30,36,.15);border:1px solid rgba(227,30,36,.4);border-radius:12px;padding:.8rem 1rem;min-width:74px;text-align:center;backdrop-filter:blur(4px)}
+.count-box span{display:block;font-size:1.9rem;font-weight:900;color:#fff}
+.count-box small{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--r);font-weight:700}
+section{padding:4.5rem 1.5rem;max-width:960px;margin:0 auto}
+h2{text-align:center;font-size:1.85rem;margin-bottom:2.2rem;color:var(--bk)}
+h2::after{content:'';display:block;width:44px;height:3px;background:var(--r);border-radius:3px;margin:.65rem auto 0}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .4s ease,transform .4s ease}
+.reveal.in-view{opacity:1;transform:translateY(0)}
+.info-grid{display:grid;gap:1.4rem;grid-template-columns:1fr}
+@media(min-width:768px){.info-grid{grid-template-columns:1fr 1fr}}
+.info-card{background:var(--c);border:1px solid var(--b);border-top:3px solid var(--r);border-radius:var(--rad);padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.card-icon{font-size:1.6rem;margin-bottom:.5rem}
+.info-card h3{font-size:1rem;margin-bottom:.3rem;color:var(--bk)}
+.place-name{font-weight:800;font-size:1.05rem;color:var(--r)}
+.place-sub{font-size:.88rem;color:var(--t);margin-bottom:.3rem}
+.info-card .when{display:inline-block;background:var(--rl);color:var(--r);font-weight:700;font-size:.82rem;padding:.25rem .7rem;border-radius:20px;margin:.5rem 0 1rem}
+.map-btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--r);color:#fff;text-decoration:none;font-size:.85rem;font-weight:700;padding:.55rem 1.1rem;border-radius:10px;margin-top:.5rem;transition:background .15s}
+.map-btn:hover{background:var(--rd)}
+.day-tabs{display:flex;justify-content:center;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.day-tab{border:2px solid var(--b);background:var(--c);color:var(--t);padding:.6rem 1.3rem;border-radius:12px;cursor:pointer;transition:all .15s;text-align:center;min-width:100px}
+.day-tab .tab-day{display:block;font-weight:800;font-size:.92rem}
+.day-tab .tab-date{display:block;font-size:.72rem;font-weight:600;opacity:.7}
+.day-tab.active,.day-tab:hover{background:var(--r);color:#fff;border-color:var(--r)}
+.day-tab.active .tab-date,.day-tab:hover .tab-date{color:#fff;opacity:.85}
+.day{display:none}
+.day.active{display:block;animation:fs .25s ease}
+@keyframes fs{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.activities{list-style:none}
+.activities li{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--b);align-items:flex-start}
+.activities li:last-child{border-bottom:none}
+.activities li.highlight{background:var(--rs);margin:.3rem -1rem;padding:1.1rem 1rem;border-radius:12px;border-bottom:none;border-left:3px solid var(--r)}
+.time-badge{flex:0 0 auto;background:#f0f0f0;color:var(--bk);font-weight:800;font-size:.78rem;padding:.35rem .7rem;border-radius:8px;white-space:nowrap;margin-top:.1rem}
+.activities li.highlight .time-badge{background:var(--r);color:#fff}
+.details h4{font-size:.95rem;margin-bottom:.15rem;color:var(--bk)}
+.details p{font-size:.85rem;color:var(--t);margin-bottom:.4rem}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem}
+.location,.responsible{display:inline-flex;align-items:center;font-size:.78rem;font-weight:600;padding:.2rem .55rem;border-radius:6px;gap:.25rem}
+.location{background:var(--rl);color:var(--rd)}
+.responsible{background:#f0f0f0;color:var(--t)}
+.responsible a{color:var(--r);text-decoration:none;font-weight:700}
+.responsible a:hover{text-decoration:underline}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.gallery-grid img{width:100%;height:260px;object-fit:cover;border-radius:var(--rad)}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr}}
+footer{text-align:center;padding:2.5rem 1rem;background:var(--dk);color:#fff;border-top:3px solid var(--r)}
+.footer-logo{margin-bottom:1rem}
+.footer-logo img{height:40px;width:auto}
+footer p{font-size:.9rem;opacity:.85}
+footer .small{font-size:.78rem;opacity:.55;margin-top:.3rem}
+@media(max-width:600px){.navbar{padding:.6rem 1rem}.nav-links a{margin-left:.8rem;font-size:.8rem}.hero h1{font-size:2.2rem}section{padding:3rem 1rem}.activities li{gap:.7rem}.time-badge{font-size:.72rem;padding:.3rem .5rem}}
+</style>
 </head>
 <body>
 
-<nav class="navbar" id="navbar">
+<nav class="navbar">
   <div class="nav-brand">
     <img class="akfa-logo-nav" src="https://pr.uz/wp-content/uploads/2022/12/akfa_logo.png" alt="AKFA Group">
   </div>
@@ -23,7 +92,6 @@
 </nav>
 
 <section class="hero">
-  <div class="hero-overlay"></div>
   <div class="hero-content reveal">
     <div class="hero-logo">
       <img src="https://pr.uz/wp-content/uploads/2022/12/akfa_logo.png" alt="AKFA Group">
@@ -31,14 +99,12 @@
     <p class="hero-eyebrow">hamkorlar bilan sayohati</p>
     <h1>Piramida<br>Chorvoq</h1>
     <p class="hero-dates">15 — 17 Iyul, 2026</p>
-
     <div class="countdown" id="countdown">
       <div class="count-box"><span id="days">--</span><small>kun</small></div>
       <div class="count-box"><span id="hours">--</span><small>soat</small></div>
       <div class="count-box"><span id="minutes">--</span><small>daqiqa</small></div>
       <div class="count-box"><span id="seconds">--</span><small>soniya</small></div>
     </div>
-
     <a href="#dastur" class="btn">Dasturni ko'rish ↓</a>
   </div>
 </section>
@@ -52,10 +118,7 @@
       <p class="place-name">AKFA SAVDO markazi</p>
       <p class="place-sub">Mo'ljal: Ashg'abot sayilgohi, Toshkent</p>
       <p class="when">15.07.2026 · soat 10:00</p>
-      <iframe
-        src="https://www.google.com/maps?q=AKFA+Savdo+Markazi+Tashkent&output=embed"
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="200"></iframe>
-      <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir//Way+ll+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F+%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F+%D0%B2+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82%D0%B5,+Maxtumkuli+street+2%2F1,+Tashkent">Google Maps'da ochish →</a>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir//Way+ll+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F+%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F+%D0%B2+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82%D0%B5,+Maxtumkuli+street+2%2F1,+Tashkent">📍 Google Maps'da ochish</a>
     </div>
     <div class="info-card">
       <div class="card-icon">🏔️</div>
@@ -63,30 +126,17 @@
       <p class="place-name">PIRAMIDA</p>
       <p class="place-sub">Chorvoq, Toshkent viloyati</p>
       <p class="when">Qaytish: 17.07.2026</p>
-      <iframe
-        src="https://www.google.com/maps?q=Piramida+Chorvoq&output=embed"
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="200"></iframe>
-      <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir//piramida+chorvoq/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x38af1311e6f2b415:0x5803323d477ab719?sa=X&ved=1t:155782&ictx=111">Google Maps'da ochish →</a>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir//piramida+chorvoq/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x38af1311e6f2b415:0x5803323d477ab719?sa=X&ved=1t:155782&ictx=111">📍 Google Maps'da ochish</a>
     </div>
   </div>
 </section>
 
 <section class="itinerary reveal" id="dastur">
   <h2>Kunlik dastur</h2>
-
   <div class="day-tabs" role="tablist">
-    <button class="day-tab active" data-day="1">
-      <span class="tab-day">1-kun</span>
-      <span class="tab-date">15 iyul</span>
-    </button>
-    <button class="day-tab" data-day="2">
-      <span class="tab-day">2-kun</span>
-      <span class="tab-date">16 iyul</span>
-    </button>
-    <button class="day-tab" data-day="3">
-      <span class="tab-day">3-kun</span>
-      <span class="tab-date">17 iyul</span>
-    </button>
+    <button class="day-tab active" data-day="1"><span class="tab-day">1-kun</span><span class="tab-date">15 iyul</span></button>
+    <button class="day-tab" data-day="2"><span class="tab-day">2-kun</span><span class="tab-date">16 iyul</span></button>
+    <button class="day-tab" data-day="3"><span class="tab-day">3-kun</span><span class="tab-date">17 iyul</span></button>
   </div>
 
   <div class="day active" data-day="1">
@@ -118,9 +168,7 @@
         <div class="details">
           <h4>Check-in</h4>
           <p>Xonalarga joylashish</p>
-          <div class="meta">
-            <span class="location">📍 PIRAMIDA</span>
-          </div>
+          <div class="meta"><span class="location">📍 PIRAMIDA</span></div>
         </div>
       </li>
       <li>
@@ -139,9 +187,7 @@
         <div class="details">
           <h4>🎳 Bowling musobaqasi</h4>
           <p>Jamoalar o'rtasida katta musobaqa!</p>
-          <div class="meta">
-            <span class="location">📍 PIRAMIDA</span>
-          </div>
+          <div class="meta"><span class="location">📍 PIRAMIDA</span></div>
         </div>
       </li>
       <li>
@@ -160,9 +206,7 @@
         <div class="details">
           <h4>⚽ Futbol JCH-2026 — Yarim final</h4>
           <p>Jahon chempionati yarim final o'yinini birgalikda tomosha qilish</p>
-          <div class="meta">
-            <span class="location">📍 PIRAMIDA</span>
-          </div>
+          <div class="meta"><span class="location">📍 PIRAMIDA</span></div>
         </div>
       </li>
     </ul>
@@ -175,9 +219,7 @@
         <div class="details">
           <h4>Nonushta</h4>
           <p>Ertalabki nonushta</p>
-          <div class="meta">
-            <span class="location">📍 PIRAMIDA</span>
-          </div>
+          <div class="meta"><span class="location">📍 PIRAMIDA</span></div>
         </div>
       </li>
       <li>
@@ -207,9 +249,7 @@
         <div class="details">
           <h4>Tushlik</h4>
           <p>Piramida kurortida tushlik</p>
-          <div class="meta">
-            <span class="location">📍 PIRAMIDA</span>
-          </div>
+          <div class="meta"><span class="location">📍 PIRAMIDA</span></div>
         </div>
       </li>
       <li>
@@ -217,9 +257,7 @@
         <div class="details">
           <h4>Bo'sh vaqt</h4>
           <p>Dam olish, basseyn, sayr — ixtiyoriy</p>
-          <div class="meta">
-            <span class="location">📍 Kurort hududida</span>
-          </div>
+          <div class="meta"><span class="location">📍 Kurort hududida</span></div>
         </div>
       </li>
       <li>
@@ -227,9 +265,7 @@
         <div class="details">
           <h4>Kechki ovqat uchun jo'nab ketish</h4>
           <p>Avtobus bilan maxsus restoranga yo'l olish</p>
-          <div class="meta">
-            <span class="location">📍 PIRAMIDA → AXMAD OLTIN JO'JA</span>
-          </div>
+          <div class="meta"><span class="location">📍 PIRAMIDA → AXMAD OLTIN JO'JA</span></div>
         </div>
       </li>
       <li class="highlight">
@@ -264,9 +300,7 @@
         <div class="details">
           <h4>Check-out</h4>
           <p>Xonalardan chiqish va narsalarni yig'ish</p>
-          <div class="meta">
-            <span class="location">📍 PIRAMIDA</span>
-          </div>
+          <div class="meta"><span class="location">📍 PIRAMIDA</span></div>
         </div>
       </li>
       <li>
@@ -274,9 +308,7 @@
         <div class="details">
           <h4>Jo'nab ketish — Toshkentga qaytish</h4>
           <p>Avtobus bilan Toshkentga qaytish yo'li</p>
-          <div class="meta">
-            <span class="location">📍 PIRAMIDA → Toshkent</span>
-          </div>
+          <div class="meta"><span class="location">📍 PIRAMIDA → Toshkent</span></div>
         </div>
       </li>
     </ul>
@@ -286,10 +318,8 @@
 <section class="gallery reveal" id="gallery">
   <h2>Piramida kurortidan lavhalar</h2>
   <div class="gallery-grid">
-    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGZorlVvPR8sBVEQssS0H8iNwUeBZEll2nl7lTunsX_KNhDsnP3Vf6FCo3UWIZc4XbhmeCupw4Td9tF8otV9rTvg9wtx6NSoQBeDnXWG70jNDm9SXWvRTYqCksaKM_U8XflTyBG=s1360-w1360-h1020-rw"
-        alt="Piramida kurorti" width="680" height="510" loading="lazy" decoding="async">
-    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFQnN5iJL-wfPr1jsj_v4tb6jR5PBZGYvLJsATs2V5vJbyLvWUK0uaXqD40l9DCNInJqtccyWVDiWpPXVeFYzv3IW1X61I9XR1SWX6PA7ARUQGeW2LxS5ckFFuL_gHNNRUYpM2gv45g6I5l=s1360-w1360-h1020-rw"
-        alt="Piramida kurorti" width="680" height="510" loading="lazy" decoding="async">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGZorlVvPR8sBVEQssS0H8iNwUeBZEll2nl7lTunsX_KNhDsnP3Vf6FCo3UWIZc4XbhmeCupw4Td9tF8otV9rTvg9wtx6NSoQBeDnXWG70jNDm9SXWvRTYqCksaKM_U8XflTyBG=s680-w680-h510-rw" alt="Piramida kurorti" width="680" height="510" loading="lazy" decoding="async">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFQnN5iJL-wfPr1jsj_v4tb6jR5PBZGYvLJsATs2V5vJbyLvWUK0uaXqD40l9DCNInJqtccyWVDiWpPXVeFYzv3IW1X61I9XR1SWX6PA7ARUQGeW2LxS5ckFFuL_gHNNRUYpM2gv45g6I5l=s680-w680-h510-rw" alt="Piramida kurorti" width="680" height="510" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -301,6 +331,12 @@
   <p class="small">Savollar bo'lsa, yuqoridagi mas'ul shaxslar bilan bog'laning</p>
 </footer>
 
-<script src="script.js" defer></script>
+<script>
+var T=new Date('2026-07-15T10:00:00+05:00').getTime(),D=document.getElementById('days'),H=document.getElementById('hours'),M=document.getElementById('minutes'),S=document.getElementById('seconds');
+function tick(){var d=T-Date.now();if(d<=0){D.textContent=H.textContent=M.textContent=S.textContent='0';return}D.textContent=Math.floor(d/864e5);H.textContent=Math.floor(d%864e5/36e5);M.textContent=Math.floor(d%36e5/6e4);S.textContent=Math.floor(d%6e4/1e3)}
+tick();setInterval(tick,1000);
+document.querySelectorAll('.day-tab').forEach(function(tab){tab.addEventListener('click',function(){var t=tab.dataset.day;document.querySelectorAll('.day-tab').forEach(function(b){b.classList.toggle('active',b===tab)});document.querySelectorAll('.day').forEach(function(d){d.classList.toggle('active',d.dataset.day===t)})})});
+if('IntersectionObserver'in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)})}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in-view')})}
+</script>
 </body>
 </html>
